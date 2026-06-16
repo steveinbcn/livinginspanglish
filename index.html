@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living in Spanglish — Musings on a life well-lived</title>
+<meta name="description" content="Short fiction, personal essays, and field reports from life abroad by Steven.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --ink:#1a1a1a;--muted:#6b6b6b;--faint:#999;
+  --rule:#e0e0e0;--bg:#fafaf8;--white:#ffffff;--max:880px;
+}
+html{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.masthead{border-bottom:0.5px solid var(--rule);padding:1.25rem 1.5rem 0;max-width:var(--max);margin:0 auto}
+.masthead-top{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.site-title{font-family:var(--serif);font-size:2rem;font-weight:700;letter-spacing:-0.02em;line-height:1;cursor:pointer}
+.site-title:hover{opacity:.75}
+.tagline{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+nav{display:flex;gap:1.5rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--muted);padding-bottom:2px}
+nav a{cursor:pointer;padding-bottom:4px;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover,nav a.active{color:var(--ink);border-bottom-color:var(--ink)}
+.dateline{font-size:.65rem;letter-spacing:.06em;color:var(--faint);text-align:right;padding:6px 0;border-top:2px solid var(--ink);margin-top:.75rem}
+.page{max-width:var(--max);margin:0 auto;padding:0 1.5rem 4rem}
+.site-hero{position:relative;width:100%;max-width:var(--max);margin:0 auto;height:320px;overflow:hidden}
+.site-hero img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.site-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.1),rgba(0,0,0,.55));display:flex;align-items:flex-end;padding:2rem 1.5rem}
+.site-hero-text h1{font-family:var(--serif);font-size:2.2rem;color:#fff;font-weight:700;line-height:1.2;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.site-hero-text p{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:.4rem}
+.section-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:.5px solid var(--rule);padding-bottom:.5rem;margin:2rem 0 1.5rem}
+.section-label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.card{border:0.5px solid var(--rule);border-radius:4px;overflow:hidden;cursor:pointer;background:var(--white);transition:box-shadow .2s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.card-img{height:160px;overflow:hidden;background:#eee}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.03)}
+.card-body{padding:.9rem 1rem 1rem}
+.card-kicker{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);margin-bottom:.35rem;font-weight:500}
+.card-title{font-family:var(--serif);font-size:1.15rem;line-height:1.3;font-weight:700;margin-bottom:.5rem}
+.card-excerpt{font-size:.82rem;line-height:1.6;color:var(--muted);margin-bottom:.5rem}
+.card-meta{font-size:.7rem;color:var(--faint)}
+.read-link{color:var(--ink);font-weight:500}
+.about-strip{margin-top:3rem;padding-top:2rem;border-top:.5px solid var(--rule)}
+.about-strip p{font-size:.85rem;line-height:1.75;color:var(--muted);font-style:italic;max-width:560px}
+.post-view{display:none}
+.post-hero{width:100%;max-height:380px;overflow:hidden;margin-bottom:2rem}
+.post-hero img{width:100%;height:380px;object-fit:cover;object-position:center;display:block}
+.post-inner{padding:0 0 3rem}
+.back-btn{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-bottom:2rem;border:none;background:none;font-family:var(--sans);font-weight:500;padding:0}
+.back-btn:hover{color:var(--ink)}
+.post-kicker{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;font-weight:500}
+.post-title{font-family:var(--serif);font-size:2.3rem;line-height:1.15;font-weight:700;max-width:680px;margin-bottom:.75rem}
+.post-date{font-size:.75rem;color:var(--faint);letter-spacing:.05em;padding-bottom:1.5rem;border-bottom:.5px solid var(--rule);margin-bottom:2rem}
+.post-body{max-width:660px}
+.post-body p{font-family:var(--serif);font-size:1.1rem;line-height:1.9;margin-bottom:1.4rem;color:var(--ink)}
+.post-body em{font-style:italic}
+.post-body strong{font-weight:700}
+.post-body blockquote{border-left:3px solid var(--ink);padding:1rem 1.5rem;margin:2rem 0;background:var(--white)}
+.post-body blockquote h3{font-family:var(--serif);font-size:1.25rem;font-weight:400;font-style:italic;line-height:1.4}
+.post-body h4{font-family:var(--sans);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;margin:2rem 0 1rem}
+.post-body figure{margin:2rem 0;clear:both}
+.post-body figure img{max-width:100%;height:auto;display:block;border-radius:2px}
+.post-body .video-wrap{position:relative;padding-bottom:56.25%;height:0;margin:2rem 0}
+.post-body .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.about-page{display:none;padding:2.5rem 0;max-width:660px}
+.about-page h1{font-family:var(--serif);font-size:2.3rem;font-weight:700;margin-bottom:.5rem}
+.about-page .about-sub{font-size:.75rem;color:var(--faint);letter-spacing:.05em;padding-bottom:1.5rem;border-bottom:.5px solid var(--rule);margin-bottom:2rem}
+.about-page p{font-family:var(--serif);font-size:1.1rem;line-height:1.9;margin-bottom:1.4rem;color:var(--ink)}
+footer{max-width:var(--max);margin:0 auto;padding:.5rem 1.5rem 2rem;border-top:2px solid var(--ink);display:flex;justify-content:space-between;font-size:.65rem;letter-spacing:.06em;color:var(--faint)}
+@media(max-width:600px){
+  .masthead-top{flex-direction:column;align-items:flex-start}
+  nav{gap:1rem}
+  .post-title{font-size:1.8rem}
+  .grid{grid-template-columns:1fr}
+  .site-hero{height:220px}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-top">
+    <div>
+      <div class="site-title" onclick="showHome()">Living in Spanglish</div>
+      <div class="tagline">Musings on a life well-lived</div>
+    </div>
+    <nav>
+      <a onclick="showHome()" id="nav-home" class="active">Home</a>
+      <a onclick="showStories()" id="nav-stories">Stories</a>
+      <a onclick="showAbout()" id="nav-about">About</a>
+    </nav>
+  </div>
+  <div class="dateline">Steven &nbsp;·&nbsp; Palm Springs &amp; Barcelona</div>
+</header>
+
+<div id="home-banner" class="site-hero">
+  <img src="images/gothic-street-slider-home.jpg" alt="Barcelona gothic quarter">
+  <div class="site-hero-overlay">
+    <div class="site-hero-text">
+      <p>Welcome</p>
+      <h1>Living in Spanglish</h1>
+    </div>
+  </div>
+</div>
+
+<main class="page">
+
+  <div id="home-view">
+    <section>
+      <div class="section-head">
+        <span class="section-label">Essays &amp; stories</span>
+      </div>
+      <div class="grid">
+    <article class="card" onclick="showPost('finding-courage-with-a-german-on-my-back')" tabindex="0" role="button" aria-label="Read Finding Courage with a German on My Back">
+      <div class="card-img"><img src="images/GomB.jpg" alt="" loading="lazy"/></div>
+      <div class="card-body">
+        <p class="card-kicker">Essay</p>
+        <h2 class="card-title">Finding Courage with a German on My Back</h2>
+        <p class="card-excerpt">Standing, frozen-still, my heart is pounding through my chest. At this elevation I can feel the thinness of the air, the cool breeze forcing my eyes shut to wet them. The silence is…</p>
+        <p class="card-meta">March 21, 2017 &nbsp;·&nbsp; <span class="read-link">Read →</span></p>
+      </div>
+    </article>
+    <article class="card" onclick="showPost('anti-social-training')" tabindex="0" role="button" aria-label="Read Anti-Social Training">
+      <div class="card-img"><img src="images/Contact.jpg" alt="" loading="lazy"/></div>
+      <div class="card-body">
+        <p class="card-kicker">Essay</p>
+        <h2 class="card-title">Anti-Social Training</h2>
+        <p class="card-excerpt">As my delayed 5:37 train out of New York rolled into Newark’s Penn Station, I was feeling the brunt of a fierce but familiar bi-temple headache.  As I stood to leave the train, I saw…</p>
+        <p class="card-meta">March 20, 2017 &nbsp;·&nbsp; <span class="read-link">Read →</span></p>
+      </div>
+    </article>
+    <article class="card" onclick="showPost('going-glossophobic')" tabindex="0" role="button" aria-label="Read Going Glossophobic">
+      <div class="card-img"><img src="images/crowd-speaking.jpg" alt="" loading="lazy"/></div>
+      <div class="card-body">
+        <p class="card-kicker">Essay</p>
+        <h2 class="card-title">Going Glossophobic</h2>
+        <p class="card-excerpt">[This piece was originally published summer of 2011 in the now shuttered--which I don't think was my fault--New York Press, a free "throwaway" paper available in some of the finest…</p>
+        <p class="card-meta">November 30, 2016 &nbsp;·&nbsp; <span class="read-link">Read →</span></p>
+      </div>
+    </article>
+    <article class="card" onclick="showPost('everything-for-a-reason')" tabindex="0" role="button" aria-label="Read Everything For A Reason">
+      <div class="card-img"><img src="images/alone.jpg" alt="" loading="lazy"/></div>
+      <div class="card-body">
+        <p class="card-kicker">Essay</p>
+        <h2 class="card-title">Everything For A Reason</h2>
+        <p class="card-excerpt">Entering the mood-lit cafeteria-turned-dance floor, I ducked under the hanging crepe paper to the relative safety and anonymity of a dark corner. I scanned the room. It was mostly…</p>
+        <p class="card-meta">November 28, 2016 &nbsp;·&nbsp; <span class="read-link">Read →</span></p>
+      </div>
+    </article>
+    <article class="card" onclick="showPost('what-if')" tabindex="0" role="button" aria-label="Read What If . . .">
+      <div class="card-img"><img src="images/What-if.jpg" alt="" loading="lazy"/></div>
+      <div class="card-body">
+        <p class="card-kicker">Essay</p>
+        <h2 class="card-title">What If . . .</h2>
+        <p class="card-excerpt">What and if. Together two of the most powerful words in the English language. They represent endless possibilities in life and are at the very inception of millions of ideas big and…</p>
+        <p class="card-meta">November 26, 2016 &nbsp;·&nbsp; <span class="read-link">Read →</span></p>
+      </div>
+    </article>
+    <article class="card" onclick="showPost('well-done')" tabindex="0" role="button" aria-label="Read Not Well Done">
+      <div class="card-img"><img src="images/grill-burgers.jpg" alt="" loading="lazy"/></div>
+      <div class="card-body">
+        <p class="card-kicker">Essay</p>
+        <h2 class="card-title">Not Well Done</h2>
+        <p class="card-excerpt">I worry a lot.  It’s most likely something I got from my mother. She worries…she worries when I worry, and she worries when I don’t.  I’ve inherited her innate ability to know when to…</p>
+        <p class="card-meta">November 25, 2016 &nbsp;·&nbsp; <span class="read-link">Read →</span></p>
+      </div>
+    </article></div>
+    </section>
+    <div class="about-strip">
+      <p><em>Steven writes short fiction, personal essays, and occasional field reports from life abroad. Former corporate grinder turned legal Barcelona resident. My goal in writing: make you feel something, anything.</em></p>
+    </div>
+  </div>
+
+  <div id="post-view" class="post-view">
+    <div id="post-hero-wrap" class="post-hero"></div>
+    <div class="post-inner">
+      <button class="back-btn" onclick="showStories()">← All stories</button>
+      <p class="post-kicker">Essay</p>
+      <h1 class="post-title" id="post-title"></h1>
+      <p class="post-date" id="post-date"></p>
+      <div class="post-body" id="post-body"></div>
+    </div>
+  </div>
+
+  <div id="about-view" class="about-page">
+    <h1>So, About Me…</h1>
+    <p class="about-sub">Steven &nbsp;·&nbsp; Writer, traveler, reformed corporate grinder</p>
+    <p>Well, I worked hard, challenged convention and, through equal parts luck, hard work, and some good intuition, made more out of myself than I ever thought possible. And then, mid-stride of what was proving to be a long and very satisfying run with a major media company, I tripped. I didn't fall and completely regained my balance, but it startled me.</p>
+    <p>It was then I reflected, "If I died tomorrow, would I consider my life a success and well-lived?" Hmmm, personally and professionally successful, yes. But, well-lived? I thought of my 3-hour daily commute, social events skipped to tackle an email backlog, and proclamations that began "Someday, I'm going to…" No, not as well-lived as I wanted to believe.</p>
+    <p>A couple years later, I was standing in an empty living room, soulmate of 15 years at my side, and four-legged rescue child at our feet, awaiting a taxi. In front of us, four suitcases, two bike bags, and Zoë's travel crate. Our lives, packed.</p>
+    <p>Fast forward two years and I still find it a tad unbelievable we are legal residents of Barcelona, Spain — afraid to pinch myself as I may wake from this most splendid of dreams.</p>
+    <p>My preferred format is short story, in both fiction and creative non-fiction genres; but you'll also find blog posts with "lessons learned" advice scribblings, stupid Steven stories, and even some portfolio pieces created for amazing friends who have had more confidence in my abilities than I may ever have.</p>
+    <p>My goal in writing is simple: make people feel something, anything — happy, horny, sad, superior to me, sorry for me, embarrassed for me. I don't care. And if I do make you feel something, I'd appreciate a note.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span>© Living in Spanglish</span>
+  <span>livinginspanglish.com</span>
+</footer>
+
+<script>
+const POSTS={
+  'finding-courage-with-a-german-on-my-back':{title:`Finding Courage with a German on My Back`,date:`March 21, 2017`,hero:`images/GomB.jpg`,content:`<p>Standing, frozen-still, my heart is pounding through my chest. At this elevation I can feel the thinness of the air, the cool breeze forcing my eyes shut to wet them. The silence is deafening. I open my eyes and look down the side of the mountain at the Google Earth view of the city below. My already booming heart seems to lose rhythm for a few beats. I’ve got to pull it together.  I can’t go back down the way I came. I close my eyes and see...my mother?  She’s on the ground below in a long white flowing gown, the wind lifting her shoulder-length blond hair; her comely face distorted in anguish. She reaches down and embraces the limp, broken body she gave birth to 45 years earlier and pulls me closer to her. I shake my head to clear the gruesome image.</p>
+<p>Forty-eight hours earlier I was four days into a two-week cycling trip through the Swiss Alps and the Italian Lakes. The day’s ride was over and the ten of us, including my partner of 15 years, Damon, were laughing and talking over each other telling stories from the day. I remember the wine; a local red, full-bodied with a musky hint of oak. Few things satisfy more fully after a long bike ride than a shower, a thick medium-rare cut of meat, and a few glasses of good wine…the order in which you partake is not important.</p>
+<p>With the bikes safely locked in the hotel basement a five-minute walk away, I was fairly certain my life-or-death decisions had already been made for the day. As such, I was on about my third glass of that tasty local red when Jimmy, one of the cycling guides, said to no one and everyone at the table, “Hey, you guys will be in Zermatt tomorrow—the Matterhorn…you should go paragliding. I’ve got some buddies I can call….” He kept talking, but my mind couldn’t get past that “p” word.</p>
+<p>I tried to process Jimmy’s suggestion, laughing a little on the inside.  Me? Paragliding? You mean the guy who doesn’t change light bulbs because his world starts wobbling uncontrollably above the second rung of a step ladder? <em>You’ve got to be out of your freakin’ min</em><em>d if you think I’m going to….</em></p>
+<p>“Hey, that sounds like fun!” said Damon, silencing my inner dialog.</p>
+<p>I turned to look at him just as the rest of our group was visually following the wine cork sailing across the table and bouncing off my shoulder, getting my attention as it was intended. I caught his eye… and then the smirk…the slight head tilt and, oh, god no…the raised eyebrows! I will never forgive you if you say...</p>
+<p>“Let’s do it!” Damon said.</p>
+<figure><img src="images/Martigny.jpg" alt="" loading="lazy"/></figure>
+<p>Shit. In a wave of perceived peer pressure not felt since I was dared to stick my tongue on the frozen tetherball pole in my elementary school back in Colorado, I responded, “Um...sure...sounds like, ah, fun.” It doesn’t count as a lie if you...what...cross something, right? I regretted my feeble affirmation the second it left my wine-stained lips.  Just then the waiter appeared.  Trying not to be too obvious, I picked up my nearly empty glass of courage, caught his eye, and tapped the rim for more.</p>
+<p>The next morning we were the first to the hotel dining room.  As we served ourselves the standard breakfast of coffee, bread, butter, Danish, yogurt, and Nutella, we were quietly wondering if we would be held to the previous night’s misplaced bravery.  As we sat in silence, potential co-jumpers, Nick and Shelley, arrived and sat at a table next to us.  “You guys still gonna go...you know...?” Shelly asked, unable to fully populate her question.  Maybe, like ole’ Voldermort, paragliding is safe to talk about if you don’t actually use the word for “it-that-must-not-be-named.”</p>
+<p>Before we had time to concoct a half-truth as to why none of us would be following through with our it-sounded-like-a-good-idea-at-the-time plan, Jimmy walked in and sat down between our two tables.  “I need to confirm with the guys in Zermatt if you still want to go <em>paragliding</em>.” Oh geez, he said it… We all sat there and looked at each other for a bit too long.  Finally, Shelly spoke up, “We’ll go if you guys go….” Five minutes later Jimmy was walking away from the table with his iPhone to his ear and a thumb’s up, mouthing “you’re gonna love it!”</p>
+<figure><img src="images/RedCourage.jpg" alt="" loading="lazy"/></figure>
+<p>The following morning in Zermatt, all five of the potential “jumpers” seemed a bit out of sorts.   We acted excited on the outside, but I’m sure it was because none of us wanted to admit that it was a mistake….a burgundy colored, musky-oaky, tannin-laced mistake. After breakfast, we headed over to a small, dimly lit office behind a bustling market in the center of town.  On one wall of the room were a couple of computer screens with videos of other idiots who got drunk and agreed to do this. Holy Mary mother of God…</p>
+<p>We then met the group of overly tanned, wrinkled German thirty-somethings who would accompany us on our flight—literally, as they would be strapped to us, or we to them, however you want to look at it. We completed the paperwork and were each given an invoice for €125.00, though the money didn’t really matter. If I died, I wouldn’t miss it...if I lived, I’d be so happy, it would be worth every hard-earned, currency-converted penny.</p>
+<p>At the top of the mountain, the five chutes were laid out, staggered on a sloping snowy ledge about the size of a soccer field. Already in my harness, my German was going over our instructions for the last time. In his heavy <em>Inglorious</em><em>-Bastards</em>-meets-<em>Hogan’s</em><em>-Heroes</em> German accent, he gave instructions I hoped I had heard correctly.</p>
+<figure><img src="images/D-n-S.jpg" alt="" loading="lazy"/></figure>
+<p>Glancing over at Damon, who was about 50 meters to the right and a little in front of me, I couldn’t believe what we were about to do.  Just as I was searching for another silent-but-deadly expletive to lob his way for getting us into this mess, he turned his head in my direction.  He looked a little….unsure?  For the briefest moment I was happy because it was his fault we were there to begin with. But that feeling quickly faded because I love his guts and didn’t want to see them splattered all over the roof of a $400-a-night Swiss chalet with a random German guy (“So tell me, was Damon part German?”  <em>Um, eventually…</em>).  Our eyes locked briefly before his head was again facing forward. Seconds later the two of them initiated Damon’s launch sequence…run….stop….chute up….run….air.</p>
+<p>A few minutes later and in sync with the next wind gust, the words hit my ears like shots from a 10mm Glock—“Gho…now!” I felt the German movement behind me and didn’t have time to consider not doing my part. I took a few steps and then… “Schtop!” my German ordered.  I felt the chute pull my harness from behind and then up. Two to three seconds later he prompted again “Gho now…ron…<em>r</em><em>o</em><em>n</em>….!” Hoping those wouldn’t be the last words I ever heard, I obeyed…running until my size 11 Adidas were off the ground.  I pushed my butt back into the harness seat and suddenly felt a bit like I was at the top of  a Ferris wheel…well, without the wheel, the ground, or the little cage thingy to keep me from falling out.</p>
+<figure><img src="images/Feet.jpg" alt="" loading="lazy"/></figure>
+<p>Finally…air born!  I wasn’t sure exactly what I had expected. Actually, that’s not true, but since the chute didn’t collapse upon itself, throwing me to my death somewhere in downtown Zermatt, I was pleasantly surprised at how peaceful and beautiful everything was. So peaceful, in fact, that I was startled when my German spoke for the first time since leaving the ground. “Das iz da hotel ver you ahr schtaying.”  he shouted over the wind, while motioning to one of the groups of buildings in the toy village below. I just nodded my head and with characteristic eloquence responded, “wow…cool.”</p>
+<p>I couldn’t believe how relaxed I was—that is until I realized that if he was pointing at things, he didn’t have both hands on the steering pulleys. I closed my eyes and immediately saw the spiraling chute...the twisted strings...and my mother in her flowing gown holding the dead me in her arms. I turned my head and looked up at the dangling pulley handle. I shouted in his general direction, “shouldn’t you be holding both handles?” As he replied, “no, it’s OK...see?” he released the other handle and put both hands out in front of us.</p>
+<p>Twenty minutes later our little joy ride was coming to an end. Zermatt was looking life-sized again as we glided towards an open field a couple hundred meters from the train station. The instructions for landing were even easier than takeoff, "Just start running when your feet hit the ground." I was told…easy enough.  No drama, no death and no motherly apparition waiting for me on the ground…it was a good day.</p>
+<p>Once back on terra firma, and after unbuckling myself from my German, I walked over to where Damon was sitting on the ground.  “Oh…my…God…that was amazing!” I said, having a hard time containing my excitement. He looked at me with a puzzled look, “You’re kidding…” he said, “and you’re going to tell me you weren’t scared?”  I thought about it for a split second and answered, “No, my God I’d do it again in a second if we could.” It was at that point I realized what was happening.  “What…?  YOU were scared?” I asked.  The look in Damon’s eyes made his spoken “yes” redundant.  I smiled and gave a little tug on his crash helmet strap, trying not to betray my sudden sense of satisfaction.  “Come on” I said, “Let’s go back to the hotel.  I’m sure they’ve got a fine musky-oaky bottle of bad-ass with your name on it.”</p>
+<h4><strong>Helmet cam video of the actual flight (no, really, I'm serious....)</strong></h4>
+<div class="video-wrap"><iframe src="https://www.youtube.com/embed/86ol_R1m2N0" frameborder="0" allowfullscreen></iframe></div>`},
+  'anti-social-training':{title:`Anti-Social Training`,date:`March 20, 2017`,hero:`images/Contact.jpg`,content:`<p>As my delayed 5:37 train out of New York rolled into Newark’s Penn Station, I was feeling the brunt of a fierce but familiar bi-temple headache.  As I stood to leave the train, I saw my good friend the Web Developer in the next car. Before he could look my way, I ducked into the safety of the dimly lit vestibule. My withdrawal had nothing to do with monies owed or a tawdry affair gone sour—it was all about me. I’m what Dr. Phil might call a “serial avoider.”</p>
+<p>When it came to the commuter social scene, I didn’t want to socialize on the train—period. It was my selfish time. I could work, read, sleep, or just stare out the window; things I couldn't do while trapped in a two-seater trying to make small talk. It wasn’t personal, I was an equal opportunity avoider—I dodged everyone—though it wasn't always easy.</p>
+<p>Once on the platform, I was eager to make the mad dash to my connecting train; but I couldn’t.  Instead, I paced myself down Track 3’s staircase in an almost stalkeresque fashion. I followed my friend the short walk along Market Street, keeping a generous distance up the urine-scented stairs to Track 5. My forced reticence was kicking at the boundaries of an already commuter-worn patience.  Most days would have seen me taking the stinky stairs two at a time, little old ladies and women with babies be damned.</p>
+<p>I reached the platform at the top of the stairs just as the Web Developer stepped onto our awaiting train. I made a sharp left and ran two cars back before jumping on. It was packed. I looked around waiting for my eyes to adjust to the faces of the people around me.  While some were familiar—Bad Comb-over Dude and Smelly Construction Worker were across from Sleeps with Her Mouth Open—I was relieved I didn’t <em>know </em>anyone there.  I put my laptop bag on the gritty floor of the vestibule and leaned up against the metal door. Finally, the end of another brutal day in mid-level IT management, where lately the concern I would be outsourced or downsized was outweighed only by the fear that I wouldn't. Grabbing my iPhone I tuned-in Dave Mathews’ “So Damn Lucky” and tuned-out the world.</p>
+<p>Feeling the rhythmic tick of the wheels on the tracks, I turned to look out the window as we passed a block-long, abandoned warehouse. Against the dark red of the brick backdrop, I caught my father’s middle-aged, professorish reflection staring back at me. God, when did that happen?</p>
+<figure><img src="images/Training-2.jpeg" alt="" loading="lazy"/></figure>
+<p>A tap on my shoulder broke my gaze. It was our heavily-tattooed, terminally-angry NJ Transit conductor. “All tickets,” he growled. I held up my bright orange get-out-of-Manhattan-free card, returning his souless, I-hate-everything look. His eyes locked on mine as he started talking at me. I pulled out one of my earbuds.       “ . . . vestibule” was all I heard.  “Sorry, what?” I asked, not sorry and already knowing what. “No riding in the vestibule,” he deadpanned. Before he got to “bule” I had my earbud back in and was reaching for my bag. “Excuse me,” I said as I pushed the door-open button a little too hard and slid past him.  I fantasized about turning and saying, in my best straight-guy voice, “You know you could be cute if you smiled more.”  Fortunately, I was only tired and cranky, not stupid.</p>
+<p>Realizing my exit from the safety of the vestibule had me going in the Web Developer’s direction, I stopped.  How far back was I?  Which car did I see him get on?  Damn.  As I was contemplating the two staircases—one to the upper level, the other down—I felt a tug at my shirtsleeve.  I froze and slowly turned toward the most recent invasion onto my person.  “Hey, I didn’t see you get on,” I said, truthfully, when I saw my next door neighbor the aging Model-Actress-Receptionist. I continued before she had a chance to say anything. “Sorry, sooo much work to do. I’m just heading to the front of the train where it’s quiet,” I lied, just wanting to get to a safe, acquaintance-free zone.</p>
+<figure><img src="images/Training-1.jpeg" alt="" loading="lazy"/></figure>
+<p>I took the down staircase as I pulled out my iPhone and pretended to check my email. Along with headphones, this was always good for getting through train cars or along the platform without “seeing” anyone. Halfway through the lower level of the car, I had such a strong sense that I shouldn’t look up, I did just that. I glanced up for a split second, which was just long enough to lock eyes with the Web Developer.  He was sitting facing me, just inches away from the stairs to my freedom. “Hey,” he said, “I thought I saw you earlier, sit.” I obeyed.  We fell into an easy banter about weather, late trains, and house repairs, the usual chat topics. But for the first time that evening I felt a sensation bordering on relaxed ease. After 10 minutes of small talk, it was my stop.</p>
+<p>“Hey, great chatting,” I said, truthfully, almost wanting to stay longer. “But I’m getting off here.” I grabbed my bag and stood.</p>
+<p>“So <em>that’s</em> why we never see you at our station anymore,” he said. “Why is it you drive two towns over to catch the train?”</p>
+<p>“Oh . . . um, so I can catch the express in the morning,” I lied, knowing he would never understand the lengths to which I’ve gone to avoid any sort of commuter socializing. “But I’ve been rethinking that strategy lately; it’s sometimes more trouble than it’s worth.”</p>`},
+  'going-glossophobic':{title:`Going Glossophobic`,date:`November 30, 2016`,hero:`images/crowd-speaking.jpg`,content:`<em>[This piece was originally published summer of 2011 in the now shuttered--which I don't think was my fault--New York Press, a free "throwaway" paper available in some of the finest sleazy dive bars in the city. And, if you managed to make it all the way to the back page, you would have found, in print, my freshly poured heart and soul... directly across from "24-hour Erotic Massage" and "men seeking ???"]</em>
+<p>When Gary, my boss, said in passing, “Oh, John wants you to give a presentation on mobile technology for the IT department's summit in March,” I was waiting for a “just kidding.” It never came. “You know I’m not good in front of crowds, right?” I asked.  “You’ll be fine,” he said. “It’s just going to be our department, no biggie.”  Sure, for a 42-year-old, college-educated professional in New York City who was completely comfortable in his own skin it wouldn’t have been a problem. It was just that whole comfortable thing I was uncomfortable with.  I was being asked to give a command performance for the CIO, executive directors and rest of the 30-person IT management team. How about something a little less fear inducing like a few hours of nude water boarding? I thanked Gary for the heads-up and immediately started thinking of ailments or tragedies that would allow me to bow out head held high.</p>
+<p>I haven't always been such an introverted dolt in front of groups. Back in college I would get up in front of a classroom or auditorium and not give a shit what anyone thought of me. Wrong answer? So what. Forgot my lines? Who cares. Fly was open? Enjoy the view. It didn’t matter. Then at some point in my mid-thirties, for reasons completely unknown to me, I became deathly afraid of speaking in front of groups. I was afflicted with what I refer to as Adult Sudden Shyness (ASS), and have since mastered the art of avoiding public speaking situations.</p>
+<p>Unfortunately, in the weeks leading up to my technology presentation, my ASS started overshadowing all aspects of my life. The “scared” me considered lying to get out of it, while the rational me said I couldn’t let this control my life. Unfortunately, the rational me won. For weeks I worked on my presentation, tweaking and reworking to make it perfect. If I could just baffle them with brilliance, maybe they wouldn't notice my ASS. No such luck.</p>
+<p>On the day of the presentation, I walked into the basketball-court-sized executive dining room for the first time. There was a large video screen at one end, in front of that, a podium with—oh, fuck—a microphone. I could feel my ASS flaring up. The tables were setup in an elongated "U" shape, with all seats facing the podium.  I grabbed a bottle of water and headed to an empty part of the table, avoiding small talk wherever possible</p>
+<p>Lost in a world of worry, I heard Gary and John, our CIO, talking just behind my chair. Well, what I thought was my chair.  Looking around I realized I was sitting in the very center of the row of tables directly facing the podium, right where I'd expect a CIO to sit.  As I gracelessly stumbled to my feet to find another chair, John put out his hand and said, "No, stay... I'll sit over here."  I’m sure it was how Peter would have felt had he sat in the boss’s seat at that Last Supper.</p>
+<p>As I sat waiting for the inevitable, my mouth kept getting drier, as if I had just ingested a handful of sand.  I grabbed my half-empty bottle of water and took a big swig, hoping for an opportunity to get up and grab more water before it was my turn. “And our next speaker is going to show and tell us about the latest wireless technologies.” John announced, “Steven? Podium’s yours.”</p>
+<p>This was it. I grabbed my now less-than-a-third-full water bottle, pushed my chair back and headed to the front of the room. I loaded the presentation and pulled up slide 1 of 13. Finally, I looked over the podium at all the people watching me. By this time my heart was beating so hard I feared my audience could see the rhythmic movement of my shirt. After the first few slides, I thought I’d actually get through it, sans humiliation. But that was before my damn mouth decided to do its best paper towel imitation and suck up every bit of its own moisture. It quickly became this little game my body was playing with me: dry mouth, drink water, say a few lines, dry mouth, drink water, say more lines. I repeated this until the bottle was empty, two-thirds of the way through my presentation.</p>
+<p>I continued on empty as best I could, but then I started hearing the clicking-slapping noises the mouth makes when not properly lubricated. I looked around the room. A few people started looking away rather than making eye contact; they were embarrassed for me. I then looked over to Gary who was, as subtly as possible, making a “wrap-it-up” signal with one hand. At that point there was no denying it. My ASS was out in plain view for senior management to scrutinize.</p>
+<p>I ended my presentation to polite applause, grabbed my empty water bottle and headed back to my seat.  Any illusions I had that people didn’t notice were shattered when, on my way out of the room, two people came up to me separately and said how <em>badly </em>they felt for me and that they had <em>wanted</em> to bring me another bottle of water. (“Hey, I saw you were drowning and thought about throwing you a life vest.”).</p>
+<p>But I survived. And even that cloud had the proverbial silver lining—it’s been five years and three months since “the incident” and no one has even <em>hinted </em>at me giving a presentation or, for that matter, speaking in public. I’d say I won.</p>`},
+  'everything-for-a-reason':{title:`Everything For A Reason`,date:`November 28, 2016`,hero:`images/alone.jpg`,content:`<p>Entering the mood-lit cafeteria-turned-dance floor, I ducked under the hanging crepe paper to the relative safety and anonymity of a dark corner. I scanned the room. It was mostly jocks, cheerleaders, and an assortment of other popular people.  No one I actually knew. They were paired up or in groups, laughing and joking. It took all of 5 minutes to realize I didn't belong.</p>
+<figure><img src="images/HeritageHS.jpg" alt="" loading="lazy"/></figure>
+<p>Three decades later, it’s a memory so vivid I could almost smell Old Spice on polyester and the residual scent of just-smoked weed.  “Steve – is one of your classmates looking for you?”  I managed a smile as I deleted the email. If those brainniacs at Classmates.com only knew how ridiculous their emails sounded to me. I was so not popular in high school. It’s not that I was <em>unpopular</em>; that implies people didn’t like me. No one really knew me well enough to not like me. I was pretty much invisible.</p>
+<p>Having completed my freshman year without so much as a No. 2 pencil mark on my social calendar, I wasn’t really looking forward to my sophomore year.  In a first- and last-ditch effort to make a name for myself, I decided to attend the Homecoming dance. Those tacky, glitter-filled posters lining the halls promised fun, friends, and a night to remember. I would achieve only one of the three.</p>
+<figure><img src="images/LeisureSuit.jpg" alt="" loading="lazy"/></figure>
+<p>The weekend before the dance I spent an entire day canvassing the local mall looking for the perfect coming-out-of-my-shell ensemble. Not having a date to help, or friends to stop me, I walked out with 100% polyester-poplin blend, turd-brown bell-bottoms, a matching jacket and a slippery, shiny poly-blend disco shirt. Oh, and cowboy boots.</p>
+<p>That night I told my mom I was meeting friends at the dance and made her drop me off a few blocks from the school.  I walked across the parking lot and stood in the shadow of a giant pine tree, watching for anyone I knew; or more accurately, anyone who knew <em>me</em>.  Soon it was too dark to see who was arriving, so I made my entrance, fittingly, in the same way I would spend the rest of the evening, alone.</p>
+<p>Feeling miles out if my element, I ventured away from my corner only a couple times to refill my soda. The air had become thick from dancing bodies and fake fog. I set my suit jacket on an empty lunchroom chair. Whoever said “Showing up is 80% of life,” was never a bystander at his own homecoming dance.</p>
+<p>I glanced at my watch again, 10:55. I'd leave in another half hour, if . . . if what? I didn’t know what I was expecting.  Across the room, I locked eyes briefly with a girl in a long white dress. I sort of knew her. Our parents were friends and I had been to her house once in grade school. Tall and skinny with glasses, she had burnt-orange hair, skin the color of Wonder bread, and freckles from tip to toe.  She reminded me of Sissy Spacek in “Carrie.”</p>
+<figure><img src="images/carrie-fi.jpg" alt="" loading="lazy"/></figure>
+<p>Each time I accidentally glanced in her direction, she was looking in mine. Did she recognize me? After a few minutes, I snuck another look, she was gone.  I was relieved . . . until she tapped my arm.  I turned to her and she smiled, “Do you want to dance?” My twisted logic said dancing with “Carrie” would be more embarrassing than standing alone in the corner all night.  I turned to her and smiled nervously, “No, thanks,” my voice cracked.  The reply must have taken a second to sink in because she was still smiling as I turned away. I wasn’t sure what else to do. A few seconds later I turned back around, without anything to say, but she had already started walking away. All I could feel was relief. In that moment, I saw so clearly what, up to that point, I had refused to admit and would still take years more to accept.</p>
+<p>I grabbed my jacket. Exiting through the glass doors to the patio and into the cool October night, I walked unnoticed through the crowd outside. I picked up pace across the grass and through the parking lot, the sounds of music and laughter fading until all I could hear were my boots on the cold asphalt.  I felt the warm tears start to spill down my cheeks. There were a million thoughts going through my head and not one of them good.  I cut across the horse field as the tears turned to sobs.  At one point I tripped over a rock or stump, almost catching my balance just before hitting the ground. I yelled out at nothing and no one. The rest of the night was a blur.  I made it home, muddy from the field, but in one piece.  I lied to my mother “great time, danced . . . “</p>
+<p>I chose not to speak of that night again until about 15 years later when I was out to dinner with the guy who would later become my life partner.  We were at a small divey Cuban restaurant in Los Angeles, seated by a window, the neon sign casting a red hue on names crudely carved into the wooden table. Nervously tracing the letters with my fingers, I replayed the events from that night. He sat in a focused silence through the whole story. I could tell he understood my pain, but oddly enough I sensed no pity.</p>
+<p>And then it came up again, just the other day, after my latest trip down that unpaved and pot-holed memory lane. Damon, the man I’d shared 21 truly magical years with, sensed my mood.  “What’s wrong?” he asked. “Nothing really,” I said, “I was just thinking about, um . . . do you remember that story I told you years ago about my high school homecoming dance?”  He flashed a knowing smile, his eyes darting to the floor before settling again on mine. “Of course,” he said, “it’s what made me fall in love with you.”</p>`},
+  'what-if':{title:`What If . . .`,date:`November 26, 2016`,hero:`images/What-if.jpg`,content:`<em>What</em> and <em>if.</em> Together two of the most powerful words in the English language. They represent endless possibilities in life and are at the very inception of millions of ideas big and small. Used effectively, these two words have the power to take us anywhere, to do anything, to be anyone. What if I could...? What if I did...? 
+<p>But with as much power as these words have to move us forward, they have many times the power to hold us back. What if I fail? What if I can't learn it? What if they don't like me?  </p>
+For years, I gave "What if..." the power to dream, to search for what was best for me, to identify my passions (spoiler alert: one is writing, but that's only the beginning).  What I couldn't do was give What if the power to act on my behalf, nor did I trust enough in myself or my abilities to follow these passions and pursue my dreams.
+<p>Instead, I tucked my What if's away like precious collector’s items, like any one of many "things" I used to collect...bird cages, antique clocks, and old magazines to name a few. I recognized and acquired things both special (at least to me) and potentially valuable, but I never bothered to identify their actual value.  Sure, most of what I collected would most likely be worth more than I paid one day. But this loose “theory” in assessing value was only accurate for those material things.</p>
+<p>I've learned in the past few years that value of my What if’s, in and of themselves, is nil.  They are ideas.  They are goals. They are plans.  But until they are acted upon, they have no value. In its raw state, a What if is simply potential; it's the basis for a best-selling novel, a successful cafe or a new technology, but is has no intrinsic value. And the longer a What if is stored away like some precious object, the less potential it has. It becomes that comfortable “Someday I’ll…” or “Eventually, when the time is right…” to get through a rough day, a disturbing turn of events or just everyday life.</p>
+But, alas, this absolute “right time” is comparable to a 2:30 am weekday train on the Barcelona Metro—you can wait all you want, but it’ll never come.
+<p>More importantly though, and the main takeaway here is that, while valueless in its infantile state, a What if is far from worthless. When taken from its drawer, the chest under the bed, the box in the attic and acted upon, a What if is limitless in its (potential) worth.  What if a machine could replace a failing heart? What if cars could drive themselves? What if a person could find a date, on a phone, simply by swiping left or right?</p>
+<p>It doesn’t matter the idea. Great achievements large and small often start out as valueless What ifs, but for the person who sees the potential and isn't afraid to pursue what others may think impossible, they become life passions that can change the course of history.
+<p>And while I can't promise answers on how to change all your What if's to Well done's, I will share everything I know about how I managed to turn a few of my What if's into concrete plans and unexpected accomplishments.</p></p>`},
+  'well-done':{title:`Not Well Done`,date:`November 25, 2016`,hero:`images/grill-burgers.jpg`,content:`<p>I worry a lot.  It’s most likely something I got from my mother. She worries…she worries when I worry, and she worries when I don’t.  I’ve inherited her innate ability to know when to worry, and worry at times there’s nothing to worry about (the calm before the worry storm).</p>
+<p>It’s worked—the worrying I mean.  It’s kept me from getting into trouble from swallowing gum and gluing my insides together, or from going blind sitting too close to the TV.  Even the clean underwear thing worked.  Years ago, when I was in that serious car accident, I didn’t have to worry when they started cutting off my jeans in the emergency room.</p>
+<p>So, the other day when I knowingly did something I should not have done, it worried me.  I broke one of the golden food rules. You know the ones: “Don’t eat anything that’s been on the floor longer than five seconds;” “Don’t buy food from a street vendor;” and “In cheap restaurants always order your hamburger well-done.”  It was this last one that got me.</p>
+<p>As I often do, I went up the 45th Street to Café Manhattan for lunch. It’s a deli serving—and I use this classification generously—“fusion cuisine,” meaning there’s a pasta station, a pizza station, the custom salad bar, and my destination that day: the grill.</p>
+<p>I frequent the grill, and everything, up to this point at least, has been served as it should.  The meat has always been grey and any drop of meat juice that could potentially host a living organism has been vaporized. I’m used to this food. It’s vapid, but safe and life sustaining.</p>
+<p>I order the Deluxe burger, no cheese. Here, they don’t bother asking how you want it cooked, and you don’t volunteer, because you both know it will be well-done, grey and dry. The cook pulls the partly cooked meat patty out of a container on a shelf and throws it on the grill. I turn to CNN on the large flat screen TV above the salad station.  As I feel the heat from the flames on the grill, I turn to see the cook using his burger flipper to sear the life out of my patty.  “Out damn juice!” I can almost make out the words forming on his lips.  He readies a to-go tin, pre-populated with the deluxe condiments: lettuce, tomato, onion, and a quarter slice of pickle spear. I turn back to CNN.</p>
+<p>“D’luxe burger, no chezz?” the cook asks. That was quick; I missed the burger assembly and dumping of the waffle fries into the tin. Did I get enough fries? Are they touching the onions? I reach over the counter for the delivery.</p>
+<p>Back at my office I close the door. Not for privacy, but to contain the infectious smell of the seasoned waffle fries.  I assemble the burger by rote, stacking the tomatoes, onions, lettuce, two packets of catsup, and top with the lightly grilled bun.</p>
+<p>As I slice it I immediately notice something is wrong, very wrong—there’s meat juice on the bottom of the tin. I pick up one half of my masterpiece and look at the cut I just made.  My worst fears confirmed—it’s…pink.  Not a little pink in the middle, but cooked a perfect medium-medium rare. Impressive, had I been at, say, Morton’s Stake House and that’s how I had ordered it.</p>
+<blockquote>
+<h3>We could finally afford that new kitchen—if . . . what, if I don’t die!?</h3>
+</blockquote>
+<p>What happened to our unspoken agreement? Well-done…it’s always been well-done.  I feel the worry creeping up my throat, wondering if it will block the ingestion of this juicy, but potentially lethal burger.  I think mad cow. When was the last case of mad cow in the US? Nothing lately, but you never know. What about E. coli? Is that in uncooked meat? I know from CNN it can kill the very young and elderly.  How far is 45 from elderly?</p>
+<p>As I contemplate my fate, I realize how hungry I am. I decide to eat just the almost-well-done parts around the outside.  I look at the pink burger after every bite. What if I get sick?  Could I sue? We could finally afford that new kitchen—if….what, if I don’t die!? I take the last safe bit from the outside. I’m still hungry—hungry….deathly ill…hungry….ill. Hungry wins out (sorry mom). I continue to inspect the meat after each bite though not exactly sure what I’m looking for.</p>
+<p>I take the final bite of the pink burger. I have no willpower when it comes to not eating something sitting right in front of me. I briefly consider keeping the nearly empty tin as evidence. “But your Honor, it was the burger that done him in…” I decide that any jury of my peers would certainly blame me for eating a cheap, non-well-done burger. I throw the container in the trash under my desk.</p>
+<p>It’s now been 13 days since the burger incident, and aside from a sore shoulder—I don’t imagine deadly meat bacteria would choose to start in my rotator cuff—I’m fine. Or am I? I just saw on CNN that stress, caused by worrying, leads to high blood pressure, malignant Hypertension, heart disease, and strokes, to name a few. Wow…that’s scary.  It’s OK mom, I’ll take this one.</p>`}
+};
+function setNav(id){document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));if(id)document.getElementById(id).classList.add('active');}
+function hideAll(){
+  ['home-view','post-view','about-view'].forEach(id=>document.getElementById(id).style.display='none');
+  document.getElementById('home-banner').style.display='none';
+}
+function showHome(){
+  hideAll();
+  document.getElementById('home-banner').style.display='block';
+  document.getElementById('home-view').style.display='block';
+  setNav('nav-home');window.scrollTo(0,0);
+}
+function showStories(){
+  showHome();setNav('nav-stories');
+  setTimeout(()=>document.querySelector('.section-head').scrollIntoView({behavior:'smooth',block:'start'}),50);
+}
+function showAbout(){
+  hideAll();
+  document.getElementById('about-view').style.display='block';
+  setNav('nav-about');window.scrollTo(0,0);
+}
+function showPost(slug){
+  const p=POSTS[slug];if(!p)return;
+  hideAll();
+  const hw=document.getElementById('post-hero-wrap');
+  hw.innerHTML=p.hero?`<img src="${p.hero}" alt="" loading="lazy"/>`:'';
+  hw.style.display=p.hero?'block':'none';
+  document.getElementById('post-title').textContent=p.title;
+  document.getElementById('post-date').textContent=p.date;
+  document.getElementById('post-body').innerHTML=p.content;
+  document.getElementById('post-view').style.display='block';
+  setNav(null);window.scrollTo(0,0);
+}
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('keydown',e=>{if(e.key==='Enter')c.click()}));
+</script>
+</body>
+</html>
